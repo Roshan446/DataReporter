@@ -10,7 +10,7 @@ from django.contrib import messages
 
 class ImportFileView(View):
     def get(self, request, *args, **kwargs):
-        return render(request,"home.html")
+        return render(request,"index.html")
     def post(self, request, *args, **kwargs):
         file = request.FILES["file"]
         excel_obj = ExcelFile.objects.create(file=file)
