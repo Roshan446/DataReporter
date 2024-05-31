@@ -1,15 +1,12 @@
 {
     "version": 2,
-    "builds": [{
-        "src": "DataReporter/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    "builds": [
+      { "src": "DataReporter/wsgi.py", "use": "@vercel/python" }
+    ],
     "routes": [
-        { "handle": "filesystem" },  
-        {
-            "src": "/(.*)",
-            "dest": "DataReporter/wsgi.py"
-        }
+      { "src": "/static/(.*)", "dest": "/static/$1" },
+      { "src": "/media/(.*)", "dest": "/media/$1" },
+      { "src": "/(.*)", "dest": "DataReporter/wsgi.py" }
     ]
-}
+  }
+  
