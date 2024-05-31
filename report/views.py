@@ -7,6 +7,10 @@ import pandas as pd
 from django.contrib import messages
 # Create your views here.
 
+class Home(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'home.html')
+
 
 class ImportFileView(View):
     def get(self, request, *args, **kwargs):

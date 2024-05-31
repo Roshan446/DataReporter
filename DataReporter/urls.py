@@ -23,7 +23,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("upload/excel", views.ImportFileView.as_view(), name='import'),
-    path("import/csv", views.ExportTxt.as_view(), name='export')
+    path("import/csv", views.ExportTxt.as_view(), name='export'),
+    path("", views.Home.as_view())
 
 
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
